@@ -11,4 +11,9 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/test' do
+    template = "The current minutes are <%= Time.now.min%>."
+  erb template
+  end
+
 end
