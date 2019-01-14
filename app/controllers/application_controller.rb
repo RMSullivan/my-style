@@ -38,6 +38,11 @@ class ApplicationController < Sinatra::Base
     erb :account
   end
 
+  post "/account" do
+    #@images = Images.user.all
+    erb :account
+  end
+
   get '/test' do
     template = "The current minutes are <%= Time.now.min%>."
   erb template
