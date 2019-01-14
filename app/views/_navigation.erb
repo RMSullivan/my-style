@@ -1,0 +1,10 @@
+<%	nav = [
+  ['HOME', '/',],
+  ['JOIN', '/join'],
+  ['TEST', '/test'],
+  ]
+%>
+
+<% nav.each do |item| %>
+  <a href="<%= item[1] %>"><%= item[0] %></a>
+<% end %>

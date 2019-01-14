@@ -6,23 +6,47 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
-    <title>SinatraPortfolioProject</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= @page_title %></title>
+
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Roboto" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="tippytop">
+      <form action="/users" method="POST">
+        <label for="email">EMAIL</label>
+        <input type="text" placeholder="Enter Email" id="email" name="user[email]"</input>
+        <label for="pswd">PASSWORD</label>
+        <input type="text" placeholder="Enter Password" id="pswd" name="user[pswd]"</input>
+        <br/>
+        <button type="submit">Login</button>
+        <label>
+        <input type="checkbox" unchecked="unchecked" name="remember"> Remember me
+        </label>
+      </form>
+    </div>
+    <br/>
+
+  	<title><%= @page_title %></title>
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
+
   <body>
     <div class="wrapper">
+   		<!-- menu-->
+
+   			 <div class="navbar">
+   				 <%= erb "_navigation".to_sym %>
+   			 </div>
+
+
 
         <%= yield %>
 
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <!--[if lt IE 7]>
-      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-    <![endif]-->
+
   </body>
 </html>
