@@ -31,6 +31,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/join" do
+    erb :account
   end
 
   get "/account" do
