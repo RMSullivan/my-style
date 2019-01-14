@@ -10,12 +10,21 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    #@images = Images.all
     erb :index
   end
 
   post "/" do
+      #@images = Images.all
+      erb :index
   end
+
+  #helpers do
+	  	#!!session[:user_id]
+	  	#end
+
+	    #def current_user
+	     # User.find(session[:user_id])
+	   # end
 
   get "/join" do
     erb :join
