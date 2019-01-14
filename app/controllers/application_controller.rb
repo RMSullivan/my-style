@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "secret"
+    set :session_secret, "secret_style"
   end
 
   get "/" do
@@ -18,35 +18,18 @@ class ApplicationController < Sinatra::Base
       erb :index
   end
 
-  #helpers do
-	  	#!!session[:user_id]
-	  	#end
+  helpers do
+  	  	def logged_in?
+  	  		!!session[:user_id]
+  	  	end
 
-	    #def current_user
-	     # User.find(session[:user_id])
-	   # end
-
-  get "/join" do
-    erb :join
-  end
-
-  post "/join" do
-    erb :account
-  end
-
-  get "/account" do
-    #@images = Images.user.all
-    erb :account
-  end
-
-  post "/account" do
-    #@images = Images.user.all
-    erb :account
-  end
+  	    def current_user
+  	      User.find(session[:user_id])
 
   get '/test' do
     template = "The current minutes are <%= Time.now.min%>."
   erb template
   end
-
+end
+end
 end
