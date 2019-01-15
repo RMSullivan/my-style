@@ -18,18 +18,9 @@ class ApplicationController < Sinatra::Base
       erb :index
   end
 
-  helpers do
-  	  	def logged_in?
-  	  		!!session[:user_id]
-  	  	end
-
-  	    def current_user
-  	      User.find(session[:user_id])
 
   get '/test' do
     template = "The current minutes are <%= Time.now.min%>."
   erb template
   end
-end
-end
 end
