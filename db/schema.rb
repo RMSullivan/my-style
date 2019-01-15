@@ -16,13 +16,15 @@ ActiveRecord::Schema.define(version: 20190114010720) do
   create_table "uploads", force: :cascade do |t|
     t.string   "title",      null: false
     t.string   "image_url",  null: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email",    null: false
-    t.string "password", null: false
+    t.string "email",           null: false
+    t.string "password",        null: false
+    t.string "password_digest"
     t.string "fname"
     t.string "lname"
   end
