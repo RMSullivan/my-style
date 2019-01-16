@@ -1,9 +1,9 @@
-module HelperMethods 
+module HelperMethods
 	def logged_in?
-  		!!session[:user_id]
+  		!!session[:username]
   	end
 
   	def current_user
-  		user = User.find(session[:user_id])
+  		user = User.find(session[:username])
   	end
 end
