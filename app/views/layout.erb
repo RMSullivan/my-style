@@ -17,15 +17,11 @@
   <body>
     <div class="tippytop">
       <form action="/account" method="POST">
-        <label for="email">EMAIL</label>
-        <input type="text" placeholder="Enter Email" id="email" name="user[email]"</input>
+        <label for="username">USERNAME</label>
+        <input type="text" placeholder="Enter Username"</input>
         <label for="password">PASSWORD</label>
-        <input type="text" placeholder="Enter Password" id="password" name="user[password]"</input>
-        <br/>
+        <input type="text" placeholder="Enter Password"</input>
         <button type="submit">Login</button>
-        <label>
-        <input type="checkbox" unchecked="unchecked" name="remember"> Remember me
-        </label>
       </form>
     </div>
     <br/>
@@ -33,9 +29,7 @@
   	<title><%= @page_title %></title>
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
-  </head>
 
-  <body>
     <div class="wrapper">
    		<!-- menu-->
 
