@@ -10,10 +10,6 @@ class UsersController < ApplicationController
       	set :public_folder, 'public'
       	set :session_secret, "secret_style"
 
-        get '/account' do
-		        @user = User.find_by_slug(params[:slug])
-		          @current_user = current_user
-		            erb :account
-	             end
+
       end
     end
