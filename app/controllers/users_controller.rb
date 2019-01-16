@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       	set :views, 'app/views'
       	enable :sessions
       	set :public_folder, 'public'
-      	set :session_secret, "password_security"
+      	set :session_secret, "secret_style"
 
         get '/account' do
 		        @user = User.find_by_slug(params[:slug])

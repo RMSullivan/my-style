@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
       	set :views, 'app/views'
       	enable :sessions
         set :public_folder, 'public'
-      	set :session_secret, "password_security"
+      	set :session_secret, "secret_style"
    	end
 
   	get '/account' do
@@ -94,4 +94,4 @@ class ImagesController < ApplicationController
         end
       end
 
-  end			
+  end
