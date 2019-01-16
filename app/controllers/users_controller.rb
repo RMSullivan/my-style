@@ -1,13 +1,19 @@
+require './config/environment'
+require './app/helpers/helper_methods'
 class UsersController < ApplicationController
 
-  get "/account" do
-    #@images = Images.user.all
-    erb :account
-  end
+  include HelperMethods
 
-  post "/account" do
-    #@images = Images.user.all
-    erb :account
-  end
+    	configure do
+      	set :views, 'app/views'
+      	enable :sessions
+      	set :public_folder, 'public'
+      	set :session_secret, "password_security"
 
-end
+        get '/account' do
+		        @user = User.find_by_slug(params[:slug])
+		          @current_user = current_user
+		            erb :account
+	             end
+      end
+    end
