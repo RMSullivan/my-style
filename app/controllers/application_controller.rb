@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   post '/' do
       @user = User.find_by(username: params[:username])
       if @user && @user.authenticate(params[:password])
-          session[:username] = @user.id
+          session[:user_id] = @user.id
           redirect to '/account'
       else
           session[:error] = "Oops, Something went wrong!"
