@@ -4,15 +4,12 @@
   top: 0;
   width: 100%;
   background-color: pink;
-  height: 24.5px;
+  text-align: center;
+  height: 35px;
   z-index: -1;
 }
-.mainlogin {
-  top: 1;
-  text-align: center;
-  font-size: 15px;
-  z-index: 0;
-}
+
+
 
 .navbar {
   font-family: 'Roboto', sans-serif;
@@ -22,11 +19,10 @@
   text-decoration: none;
   background-color: black;
   position: fixed;
-  left: 0;
-  top: 24;
   width: 100%;
-  height: 40px;
-  z-index: 1
+
+  height: 35px;
+  z-index: 0
 }
 
 a:link, a:visited {
