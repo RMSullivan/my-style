@@ -19,23 +19,20 @@ class ApplicationController < Sinatra::Base
       end
   end
 
-  get '/login' do
-      if logged_in?
-        redirect '/account'
-      else
-          erb :index
-      end
-  end
 
-  post '/login' do
+  post '/' do
       @user = User.find_by(username: params[:username])
       if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect to '/account'
       else
           session[:error] = "Oops, Something went wrong!"
-          redirect to '/'
+          redirect to '/oops'
       end
+  end
+
+  get '/oops' do
+    erb :oops
   end
 
   get '/join' do
@@ -43,7 +40,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/join' do
-      @user = User.new(username: params[:username], password: params[:password], email: params[:email])
+      @user = User.new(username: params[:username], name: params[:name],email: params[:email], password: params[:password])
       if @user.save
         redirect '/account'
       else
@@ -60,6 +57,8 @@ class ApplicationController < Sinatra::Base
           redirect '/join'
       end
   end
+
+
   get '/test' do
   template = "The current minutes are <%= Time.now.min%>."
   erb template
