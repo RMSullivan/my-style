@@ -45,7 +45,7 @@ class ApplicationController < Sinatra::Base
         redirect '/account'
       else
           session[:error] = "Oops, Something went wrong. Please make sure to fill in all the fields."
-          redirect '/join'
+          redirect '/oops'
       end
   end
 
@@ -54,7 +54,7 @@ class ApplicationController < Sinatra::Base
           session.clear
           redirect '/'
       else
-          redirect '/join'
+          redirect '/oops'
       end
   end
 
