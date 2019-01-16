@@ -2,8 +2,15 @@ class User < ActiveRecord::Base
   has_many :images
 
   has_secure_password
-  EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\z/i
-#shortcut validation format
-  validates :email, :presence => true,
-                    :format => EMAIL_REGEX
+  validates_presence_of :username, :email, :password
+
+	def slug
+		self.username.gsub(" ", "-").downcase
+	end
+
+	def self.find_by_slug(slug)
+		name = slug.gsub("-", " ")
+		User.all.detect{|user| user.username.downcase == name}
+	end
+
 end
