@@ -1,29 +1,22 @@
 require './config/environment'
 require './app/helpers/helper_methods'
+
 class ImagesController < ApplicationController
   include HelperMethods
 
-   	configure do
-      	set :views, 'app/views'
-      	enable :sessions
-        set :public_folder, 'public'
-      	set :session_secret, "secret_style"
-   	end
+  configure do
+    set :public_folder, 'public'
+    set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "secret_style"
+  end
 
   	get '/account' do
     		if logged_in?
     			@user = current_user
-    			erb :'account/index'
+    			erb :mystyle
     		else
-    			redirect '/'
-    		end
-    	end
-
-    	get '/account/new' do
-    		if logged_in?
-    			erb :'account/new'
-    		else
-    			redirect '/'
+    			erb :index
     		end
     	end
 
@@ -93,5 +86,4 @@ class ImagesController < ApplicationController
           redirect '/account/#{@image.id}'
         end
       end
-
-  end
+end
