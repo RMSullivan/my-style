@@ -12,6 +12,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    @images = Image.all
+    erb :index
+  end
+
+  get '/' do
     erb :index
   end
 

@@ -6,6 +6,15 @@
   <button type="submit"action="/account/edit">Edit Information</button> <button type="submit"action="/account/edit">Delete Account</button>
 </section>
 
+<% @users.each do |user| %>
+    <%= user.username %>
+    <%= user.name %>
+    <%= user.email %>
+    <% end %>
+
+
+
+
 <h3> Upload a Photo</h3>
   <form action="/account">
       <input type="file" name="pic" accept="image/*">

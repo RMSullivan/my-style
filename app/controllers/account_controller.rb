@@ -11,7 +11,15 @@ class AccountController < ApplicationController
       	set :session_secret, "secret_style"
       end
 
+      get "/account" do
+        @users = User.all
+        erb :account
+      end
+
       get '/account' do
         erb :account
       end
+
+
+
     end

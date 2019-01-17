@@ -4,4 +4,7 @@
 
 <br/>
 <p> | | of all images uploaded by all usrs</p>
- <img src="<%= @picture %>" />
+
+<% @images.each do |image| %>
+    <%= image.picture %>
+    <% end %>
