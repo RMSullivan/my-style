@@ -1,6 +1,6 @@
 require './config/environment'
 require './app/helpers/helper_methods'
-class UsersController < ApplicationController
+class AccountController < ApplicationController
 
   include HelperMethods
 

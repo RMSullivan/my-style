@@ -6,6 +6,6 @@ end
 
 use Rack::MethodOverride
 use ImagesController
-use UsersController
+use AccountController
 use JoinController
 run ApplicationController
