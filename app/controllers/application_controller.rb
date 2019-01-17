@@ -11,7 +11,11 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret_style"
   end
 
-      
+  get '/' do
+    erb :index
+  end
+
+
   get '/test' do
   template = "The current minutes are <%= Time.now.min%>."
   erb template
