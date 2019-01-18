@@ -10,6 +10,8 @@ class JoinController < ApplicationController
     enable :sessions
     set :session_secret, "secret_style"
   end
+
+
   get '/join' do
     erb :join
   end

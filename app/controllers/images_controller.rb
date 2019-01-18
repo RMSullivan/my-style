@@ -9,6 +9,10 @@ class ImagesController < ApplicationController
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "secret_style"
+
+    get '/' do
+      @images = Image.all
+      erb :index
+    end
   end
 end
-  

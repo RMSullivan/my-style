@@ -12,13 +12,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    @images = Image.all
-    erb :index
-  end
+       if logged_in?
+  		    redirect '/account'
+  	    else
+  		    erb :index
+        end
+    end
 
-  get '/' do
-    erb :index
-  end
 
 
   get '/test' do
